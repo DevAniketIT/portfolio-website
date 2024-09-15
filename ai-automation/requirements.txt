@@ -1,0 +1,13 @@
+openai==1.12.0
+python-dotenv==1.0.0
+streamlit==1.31.0
+pandas==2.2.0
+python-docx==1.1.0
+PyPDF2==3.0.1
+smtplib-ssl==0.1
+email-validator==2.1.0
+markdown==3.5.2
+beautifulsoup4==4.12.3
+requests==2.31.0
+plotly==5.18.0
+altair==5.2.0

@@ -1,0 +1,120 @@
+services:
+  # Web Service - Job Application Tracker API
+  - type: web
+    name: job-tracker-api
+    runtime: python
+    region: oregon # or your preferred region: virginia, ohio, singapore, frankfurt
+    plan: starter # Options: starter, standard, pro, pro_plus, pro_max, pro_ultra
+    branch: main # or your default branch
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: "./start.sh"
+    
+    # Environment variables for the web service
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      
+      # Database connection (will be auto-populated by Render)
+      - key: DATABASE_URL
+        fromDatabase:
+          name: job-tracker-db
+          property: connectionString
+      
+      # Server configuration
+      - key: HOST
+        value: "0.0.0.0"
+      - key: PORT
+        value: "10000" # Render uses port 10000 for web services
+      
+      # API Configuration
+      - key: API_KEY_REQUIRED
+        value: "false" # Set to "true" in production if needed
+      - key: API_KEY
+        generateValue: true # Render will generate a secure API key
+      
+      # Rate limiting
+      - key: RATE_LIMIT_REQUESTS
+        value: "1000" # Higher limit for production
+      - key: RATE_LIMIT_WINDOW
+        value: "60"
+      
+      # CORS configuration
+      - key: CORS_ORIGINS
+        value: "*" # Update with your frontend domains in production
+      - key: CORS_METHODS
+        value: "GET,POST,PUT,DELETE,OPTIONS"
+      - key: CORS_HEADERS
+        value: "*"
+      
+      # Application environment
+      - key: ENVIRONMENT
+        value: "production"
+      - key: DEBUG
+        value: "false"
+      
+      # Logging level
+      - key: LOG_LEVEL
+        value: "INFO"
+      
+      # Health check configuration
+      - key: HEALTH_CHECK_PATH
+        value: "/health"
+    
+    # Health check configuration
+    healthCheckPath: "/health"
+    
+    # Auto-deploy settings
+    autoDeploy: true
+    
+    # Custom domains (add your domain here when ready)
+    # domains:
+    #   - your-api-domain.com
+    
+    # Disk configuration for logs and temporary files
+    disk:
+      name: api-disk
+      mountPath: /app/data
+      sizeGB: 1
+
+  # Background Worker (optional - for future async tasks)
+  # - type: worker
+  #   name: job-tracker-worker
+  #   runtime: python
+  #   region: oregon
+  #   plan: starter
+  #   branch: main
+  #   buildCommand: |
+  #     pip install --upgrade pip
+  #     pip install -r requirements.txt
+  #   startCommand: "python worker.py" # You'll need to create this
+  #   
+  #   envVars:
+  #     - key: DATABASE_URL
+  #       fromDatabase:
+  #         name: job-tracker-db
+  #         property: connectionString
+  #     - key: WORKER_TYPE
+  #       value: "background_tasks"
+
+databases:
+  # PostgreSQL database
+  - name: job-tracker-db
+    databaseName: job_tracker_production
+    user: job_tracker_user
+    region: oregon # Same region as web service for low latency
+    plan: starter # Options: starter, standard, pro, pro_plus
+    
+    # Database version
+    postgresMajorVersion: 15
+    
+    # Backup configuration
+    # ipAllowList: [] # Add IP addresses if you need external access
+    
+    # Database will be automatically provisioned with:
+    # - Automated backups
+    # - Point-in-time recovery
+    # - High availability (on paid plans)
+    # - SSL connections
+    # - Connection pooling

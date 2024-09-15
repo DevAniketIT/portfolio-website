@@ -1,0 +1,66 @@
+{
+  "name": "job-tracker-client-examples",
+  "version": "1.0.0",
+  "description": "JavaScript and Node.js client examples for Job Application Tracker API",
+  "type": "module",
+  "main": "javascript_client_example.js",
+  "scripts": {
+    "test": "node test_examples.js",
+    "test:syntax": "npm run test:js && npm run test:node",
+    "test:js": "node javascript_client_example.js",
+    "test:node": "node node_client_example.js",
+    "test:local": "API_BASE_URL=http://localhost:8000 node node_client_example.js",
+    "test:production": "API_BASE_URL=https://your-service-name.onrender.com node node_client_example.js",
+    "demo": "node node_client_example.js",
+    "demo:with-key": "API_KEY=your-api-key node node_client_example.js",
+    "lint": "eslint *.js",
+    "format": "prettier --write *.js"
+  },
+  "keywords": [
+    "job-tracker",
+    "api-client",
+    "javascript",
+    "nodejs",
+    "rest-api",
+    "http-client",
+    "axios",
+    "fetch"
+  ],
+  "author": "Job Tracker API",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/job-tracker-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/job-tracker-api/issues"
+  },
+  "homepage": "https://github.com/your-username/job-tracker-api#readme",
+  "environment": {
+    "development": {
+      "API_BASE_URL": "http://localhost:8000",
+      "API_KEY": "",
+      "REQUEST_TIMEOUT": "30000",
+      "RETRY_ATTEMPTS": "3",
+      "RETRY_DELAY_MS": "1000"
+    },
+    "production": {
+      "API_BASE_URL": "https://your-service-name.onrender.com",
+      "API_KEY": "your-production-api-key",
+      "REQUEST_TIMEOUT": "30000",
+      "RETRY_ATTEMPTS": "5",
+      "RETRY_DELAY_MS": "2000"
+    }
+  }
+}
