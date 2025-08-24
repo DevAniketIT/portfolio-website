@@ -1,0 +1,42 @@
+{
+  "name": "aniket-kumar-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Aniket Kumar - Full Stack Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8000 -o",
+    "dev": "npx live-server --port=8000 --open=/",
+    "build": "echo 'Build completed - static files ready for deployment'",
+    "deploy": "vercel --prod",
+    "preview": "vercel"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "frontend",
+    "developer",
+    "html",
+    "css",
+    "javascript",
+    "responsive"
+  ],
+  "author": {
+    "name": "Aniket Kumar",
+    "email": "contact@aniketkumar.dev",
+    "url": "https://aniketkumar.dev"
+  },
+  "license": "MIT",
+  "homepage": "https://aniketkumar.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aniketkumar/portfolio-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aniketkumar/portfolio-website/issues"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
