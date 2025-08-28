@@ -249,6 +249,19 @@ ai-automation-portfolio/
 
 ---
 
+## 📞 Contact & Support
+
+**Developer**: Aniket Kumar  
+**Email**: [aniket.kumar.devpro@gmail.com](mailto:aniket.kumar.devpro@gmail.com)  
+**LinkedIn**: [linkedin.com/in/aniket-kumar-devpro](https://linkedin.com/in/aniket-kumar-devpro)  
+**GitHub**: [github.com/DevAniketIT](https://github.com/DevAniketIT)  
+
+For technical support, business inquiries, or custom development services, feel free to reach out!
+
+---
+
 **Built for entrepreneurs targeting the growing AI automation market. Perfect for Fiverr sellers looking to offer high-value, technology-driven services.**
 
 🚀 **Ready to launch your AI automation business? Start with these three powerful tools!**
+
+*Developed with ❤️ by [Aniket Kumar](mailto:aniket.kumar.devpro@gmail.com)*

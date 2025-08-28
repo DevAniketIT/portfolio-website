@@ -233,12 +233,12 @@ This project is open source. Feel free to use, modify, and adapt for your own ne
 
 ## 📞 Contact
 
-Built by [Your Name] as part of a job search optimization project.
+Built by **Aniket Kumar** as part of a comprehensive Python development portfolio.
 
-- **Portfolio**: [Your Portfolio URL]
-- **LinkedIn**: [Your LinkedIn]
-- **GitHub**: [Your GitHub]
-- **Email**: [Your Email]
+- **Portfolio**: [aniket-portfolio.vercel.app](https://aniket-portfolio.vercel.app)
+- **LinkedIn**: [linkedin.com/in/aniket-kumar-devpro](https://linkedin.com/in/aniket-kumar-devpro)
+- **GitHub**: [github.com/DevAniketIT](https://github.com/DevAniketIT)
+- **Email**: [aniket.kumar.devpro@gmail.com](mailto:aniket.kumar.devpro@gmail.com)
 
 ---
 
